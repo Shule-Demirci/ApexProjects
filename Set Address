@@ -1,0 +1,125 @@
+public class Address {
+	private String streetNumber;
+    private String streetName;
+    private String unitNumber;
+    private String city;
+    private String state;
+    
+	// 	Note: check the link below for the methods of the String Class, That is all you need! Good luck!
+	//  https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_string.htm 
+    
+    // assignment # 8
+    public void setStreetNumber(String sNumber){
+        // complete this method so it can be used to set the streetNumber
+        // make sure street number can not be more than 12 characters otherwise set as 'wrongValue'
+        // ***hint: sNumber.length()
+        
+        if(sNumber.length()< = 12){
+            streetNumber = sNumber;
+            
+        } else{
+            streetNumber = 'wrongvalue';
+        }
+        
+  	}
+    
+	// assignment # 9    
+    public void setStreetName(String sName){
+        // complete this method so it can be used to set the streetName
+        // below is the blacklist of the street names, make sure street name can not include any of these words otherwise set as 'wrongValue'
+        // blacklist: hell, noep, yeah
+        // ***hint: sName.contains()
+      
+        if( sName.contains('hell') || sName.contains('noep') ||sName.contains('yeah') ){
+            StreetName = 'wrongValue';
+        }
+        else{
+           StreetName = sName; 
+    }
+    }
+	// assignment # 10    
+	
+    public void setUnitNumber(String uNumber){
+        // complete this method so it can be used to set the unitNumber
+        // unit numbers must be saved all capital. 
+        // e.g if uNumber is '12 a' set it as '12 A'
+        // ***hint: toUpperCase()
+       
+        UnitNumber = uNumber.toUpperCase();
+       
+         
+    
+     
+}
+
+	// assignment # 11    
+    public void setCity(String c){
+        // complete this method so it can be used to set the city
+        // make sure city name is at least 4 characters. otherwise set it as 'unknown'  
+        // e.g if c is 'London' set it as 'London'
+        // e.g if c is 'Lon' set it as 'unknown'
+        // e.g if c is null set it as 'unknown'
+        // ***hint: do you really need hint ? :)
+        // 
+        
+        if (c == null){
+            city = 'unknown';
+        }
+        else if(c.length() > = 4){
+            City = c;
+               
+        } else{
+            City = 'unknown';
+        }
+        
+    }
+
+
+
+	// assignment # 12    
+    public void setState(String s){
+        // complete this method so it can be used to set the state
+        // make sure state name is at least 2 characters but no more than 10 characters. otherwise set it as 'unknown'
+        // also state name can not be same as city name otherwise set it 'wrongState'
+        // state name can not be null, if s is null set state as 'unknown'
+       
+        if ( s == 'null'){
+            State ='unknown';
+        }
+            else if(s.length()>= 2 && s.length()<= 10){
+            if (s == city ){
+                state = 'wrongState';
+            } else{
+                State = s;
+                
+            }
+                    
+        } else{
+            State = 'unknown';
+        }
+        
+    }
+
+    public String getStreetNumber(){ 
+        return streetNumber;
+    }
+
+
+    public String getStreetName(){
+        return streetName;
+    }
+    
+    public String getunitNumber(){
+        return unitNumber;
+    }    
+    
+    public String getCity(){
+        return city;
+    }
+
+    public String getState(){
+        return state;
+    }
+
+
+}
