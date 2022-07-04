@@ -1,0 +1,16 @@
+@isTest
+
+public class CreateAccount_Test {
+   
+@isTest
+    public static void createAccountMethod_Test(){
+        
+        Test.startTest();
+        CreateAccount.createAccountMethod();
+        System.assertEquals(1, Limits.getDmlStatements());
+        System.debug(Limits.getDmlStatements());
+        Test.stopTest();
+        
+        System.debug(Limits.getDmlStatements());
+    }
+}
