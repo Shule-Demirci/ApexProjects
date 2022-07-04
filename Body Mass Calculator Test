@@ -1,0 +1,13 @@
+@IsTest
+public class BodyMass_Test {
+    @IsTest
+    public static void calculateBMI_Test(){
+        Decimal result =   BodyMass.calculateBMI(100,10);
+        System.assertEquals(21.2244898, result);
+    }
+    @IsTest
+    public static void calculateBMI_Test2(){
+        String result =   BodyMass.calculateBMI('Michael','Test');
+        System.assertEquals('MICHAEL TEST', result, 'FULL NAME IS NOT CORRECT!');
+}
+}
