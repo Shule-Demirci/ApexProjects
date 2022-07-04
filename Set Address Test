@@ -1,0 +1,125 @@
+@isTest
+public class AddressTest {
+
+    @isTest
+    public static void setStreetNumber_Positif_Test(){
+        Address address = new Address();
+       	address.setStreetNumber('123456789012');
+        System.assertEquals('123456789012', address.getStreetNumber());
+	}
+    
+    @isTest
+    public static void setStreetNumber_Negative_Test(){
+        Address address = new Address();
+       	address.setStreetNumber('1234567890123');
+        System.assertEquals('wrongValue', address.getStreetNumber());
+
+    }
+    
+    @isTest
+    public static void setStreetName_Positif_Test(){
+        Address address = new Address();
+       	address.setStreetName('Sky Road');
+        System.assertEquals('Sky Road', address.getStreetName());
+	}
+    
+    @isTest
+    public static void setStreetName_Negative_Test1(){
+        Address address = new Address();
+       	address.setStreetName('hell Road');
+        System.assertEquals('wrongValue', address.getStreetName());
+	}
+    
+    @isTest
+    public static void setStreetName_Negative_Test2(){
+        Address address = new Address();
+        address.setStreetName('noep street');
+        System.assertEquals('wrongValue', address.getStreetName());
+	}
+
+   @isTest
+    public static void setStreetName_Negative_Test3(){
+        Address address = new Address();
+        address.setStreetName('yeah');
+        System.assertEquals('wrongValue', address.getStreetName());
+	}
+
+    @isTest
+    public static void setUnitNumber_Positif_Test1(){
+        Address address = new Address();
+       	address.setUnitNumber('A-125');
+        System.assertEquals('A-125', address.getUnitNumber());
+	}
+    
+    @isTest
+    public static void setUnitNumber_Positif_Test2(){
+        Address address = new Address();
+       	address.setUnitNumber('25 f');
+       System.assertEquals('25 F', address.getUnitNumber());
+	}
+    
+    @isTest
+    public static void setCity_Positif_Test1(){
+        Address address = new Address();
+       	address.setCity('Ista');
+        System.assertEquals('Ista', address.getUnitNumber());
+	}
+    
+    @isTest
+    public static void setCity_Positif_Test2(){
+        Address address = new Address();
+       	address.setCity('Ist');
+        System.assertEquals('unknown', address.getCity());
+	}
+    
+    @isTest
+    public static void setCity_Positif_Test3(){
+        Address address = new Address();
+       	address.setCity(null);
+        System.assertEquals('unknown', address.getCity());
+	}
+
+    @isTest
+    public static void setState_Positif_Test1(){
+        Address address = new Address();
+       	address.setState('NY');
+        System.assertEquals('NY', address.getState());
+	}
+
+    @isTest
+    public static void setState_Positif_Test2(){
+        Address address = new Address();
+       	address.setState('TexasTexas');
+        System.assertEquals('TexasTexas', address.getState());
+	}
+
+    @isTest
+    public static void setState_Negative_Test1(){
+        Address address = new Address();
+       	address.setState('T');
+        System.assertEquals('unknown', address.getState());
+	}
+
+    @isTest
+    public static void setState_Negative_Test2(){
+        Address address = new Address();
+       	address.setState('TexasTexasT');
+        System.assertEquals('unknown', address.getState());
+	}
+
+    @isTest
+    public static void setState_Negative_Test3(){
+        Address address = new Address();
+       	address.setState(null);
+        System.assertEquals('unknown', address.getState());
+	}
+ 
+    @isTest
+    public static void setState_Negative_Test4(){
+        Address address = new Address();
+        address.setCity('Istanbul');
+       	address.setState('Istanbul');
+        System.assertEquals('wrongState', address.getState());
+	}
+     
+}
