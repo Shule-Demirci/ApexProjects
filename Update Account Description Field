@@ -1,0 +1,12 @@
+public class UpdateDescriptionField {
+    public static void myTest(){
+        List<Account> oldAccs = [select name, description from account];
+        List<Account> newList = new List<Account>();
+        
+        for(Account acc : oldAccs){
+            acc.Description = 'test';
+            newList.add(acc);
+        }
+        update newList;
+    }
+}
