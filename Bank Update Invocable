@@ -1,0 +1,19 @@
+public class BankUpdate {
+  
+    @invocablemethod
+    public static void bankDescUpdate(){
+        List<List<sObject>> results = [FIND 'Bank*' RETURNING Lead(Description)];
+        
+        List<Lead> returnedLeads = (List<Lead>)results[0];
+        
+        System.debug(returnedLeads);
+        List<Lead> updatedLeads = new List<Lead>();
+        for(Lead l : returnedLeads){
+      l.Description = 'Banking Industry';
+            updatedLeads.add(l); 
+            System.debug(l.Description);
+        }
+        System.debug(updatedLeads.size());
+        update updatedLeads;
+    }
+}
