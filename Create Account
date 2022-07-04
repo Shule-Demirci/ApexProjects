@@ -1,0 +1,11 @@
+public class CreateAccount {
+    public static void createAccountMethod(){
+        List<Account> listAcc = new List<Account>();
+        for(Integer i = 1; i<4 ; i++){
+           Account acc = new Account(Name = 'Test ' + i);
+           listAcc.add(acc);                          
+                                         
+        }
+        insert listAcc;
+    }
+}
