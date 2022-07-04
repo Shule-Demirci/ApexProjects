@@ -1,0 +1,19 @@
+@isTest
+public class TaskUtility_Test {
+@isTest
+    public static void testTaskPriority(){
+        String pri = TaskUtility.getTaskPriority('NY');
+        System.assertequals('Normal',pri);
+    }
+    @isTest 
+    public static void testTaskHighPriority(){
+       String pri = TaskUtility.getTaskPriority('CA');
+        System.assertequals('High',pri);
+    }
+    @isTest 
+    public static void testTaskNullPriority(){
+       String pri = TaskUtility.getTaskPriority('Texas');
+        System.assertequals(Null,pri);
+    
+}
+}
